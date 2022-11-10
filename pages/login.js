@@ -30,7 +30,6 @@ const Login = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [msg, setMsg] = useState("");
-  //   const [navigate, setNavigate] = useState(false);
 
   const handleShowClick = () => setShowPassword(!showPassword);
 
@@ -43,15 +42,12 @@ const Login = () => {
         email,
         password,
       });
-
-      //   setNavigate(true);
+      router.push("/");
       setIsLoading(false);
     } catch (error) {
       setMsg(error.response.data.msg);
       setIsLoading(false);
     }
-
-    // router.push("/");
   };
 
   return (
@@ -133,7 +129,11 @@ const Login = () => {
       </Stack>
       <Box>
         New to us?{" "}
-        <button color="teal.500" href="" onClick={() => router.push("/register")}>
+        <button
+          color="teal.500"
+          href=""
+          onClick={() => router.push("/register")}
+        >
           Register
         </button>
       </Box>

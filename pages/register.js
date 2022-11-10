@@ -31,7 +31,6 @@ const Register = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confPassword, setConfPassword] = useState("");
-  const [navigate, setNavigate] = useState(false);
   const [msg, setMsg] = useState("");
   const [isLoading, setIsLoading] = useState(false);
 
@@ -49,15 +48,11 @@ const Register = () => {
         password,
         confPassword,
       });
-
-      setNavigate(true);
+      router.push("/login");
       setIsLoading(false);
     } catch (error) {
       setMsg(error.response.data.msg);
       setIsLoading(false);
-    }
-    if (navigate) {
-      router.push("/login");
     }
   };
 
