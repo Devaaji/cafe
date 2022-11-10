@@ -1,9 +1,6 @@
 import { useState } from "react";
 import { Button, Box } from "@chakra-ui/react";
-import Head from "next/head";
-import Image from "next/image";
 import useRemoteUsers from "../components/hooks/useRemoteUsers";
-import styles from "../styles/Home.module.css";
 import axios from "axios";
 import { useRouter } from "next/router";
 
